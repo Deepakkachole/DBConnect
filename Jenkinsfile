@@ -1,10 +1,12 @@
 pipeline {
     agent any
-
+    environment {
+    TEST_VAR="Fist ENV SET"    
+    }
     stages {
         stage("Fist") {
             steps {
-          echo "FIRST"
+          echo "FIRST  $TEST_VAR + $env.DBName"
             }
         }
       stage("Second") {
