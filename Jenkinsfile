@@ -1,3 +1,4 @@
+def gv 
 pipeline {
     agent any
     environment {
@@ -6,21 +7,25 @@ pipeline {
     stages {
         stage("Fist") {
             steps {
-          echo "FIRST  $TEST_VAR + $env.DBName"
+                script {
+                    gv.testpp()
+                }
             }
         }
       stage("Second") {
             steps {
-           echo "Second"
+           script {
+                    gv.buildApp()
+                }
             }
-        }
+      }
 
       stage("Third") {
             steps {
-            echo "Third"
+             script {
+                    gv.deployApp()
+                }
             }
-        }
-
     }
 }
 
