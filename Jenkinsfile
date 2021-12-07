@@ -1,31 +1,25 @@
 pipeline {
     agent any
-    def gv 
     environment {
     TEST_VAR="Fist ENV SET"
     }
     stages {
         stage("Fist") {
             steps {
-                script {
-                    gv.testpp()
-                }
+          echo "FIRST  $TEST_VAR + $env.DBName"
             }
         }
       stage("Second") {
             steps {
-           script {
-                    gv.buildApp()
-                }
+           echo "Second"
             }
-      }
+        }
 
       stage("Third") {
             steps {
-             script {
-                    gv.deployApp()
-                }
+            echo "Third"
             }
+        }
+
     }
 }
-
