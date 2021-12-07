@@ -2,12 +2,11 @@ pipeline {
     agent any
     environment {
     TEST_VAR="Fist ENV SET"
-    SERVER_CREDENTIALS = credentials ('server-cred')    
     }
     stages {
         stage("Fist") {
             steps {
-          echo "FIRST  $TEST_VAR + $env.DBName + $SERVER_CREDENTIALS"
+          echo "FIRST  $TEST_VAR + $env.DBName"
             }
         }
       stage("Second") {
