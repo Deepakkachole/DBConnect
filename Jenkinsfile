@@ -1,6 +1,6 @@
-def gv 
 pipeline {
     agent any
+    def gv 
     environment {
     TEST_VAR="Fist ENV SET"
     }
